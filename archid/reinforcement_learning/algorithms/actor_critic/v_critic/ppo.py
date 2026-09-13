@@ -86,43 +86,45 @@ class PPO(VCritic):
 
     def update(self, experience):
 
+        states = euclid.Tensor(
+            np.stack([
+                transition.state.data
+                for transition in experience
+            ])
+        )
 
-        states = [
-            transition.state
-            for transition in experience
-        ]
+        actions = euclid.Tensor(
+            np.asarray([
+                transition.action
+                for transition in experience
+            ])
+        )
 
-        actions = [
-            transition.action
-            for transition in experience
-        ]
+        old_log_probs = euclid.Tensor(
+            np.asarray([
+                transition.log_prob
+                for transition in experience
+            ])
+        )
 
-        old_log_probs = [
-            transition.log_prob
-            for transition in experience
-        ]
+        rewards = euclid.Tensor(
+            np.asarray([
+                transition.reward
+                for transition in experience
+            ])
+        )
 
-        rewards = [
-            transition.reward
-            for transition in experience
-        ]
-
-        next_states = [
-            transition.next_state
-            for transition in experience
-        ]
+        next_states = euclid.Tensor(
+            np.stack([
+                transition.next_state.data
+                for transition in experience
+            ])
+        )
 
         dones = [
             transition.done
             for transition in experience
         ]
-
-        states = euclid.Tensor(states)
-        actions = euclid.Tensor(actions)
-        old_log_probs = euclid.Tensor(old_log_probs)
-        rewards = euclid.Tensor(rewards)
-        next_states = euclid.Tensor(next_states)
-
         # --------------------------------------------------------
         # Compute value estimates
         # --------------------------------------------------------

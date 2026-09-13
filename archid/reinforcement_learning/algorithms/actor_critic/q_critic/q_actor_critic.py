@@ -1,17 +1,25 @@
-
 from .q_critic import QCritic
-
+import euclid
 
 class QActorCritic(QCritic):
 
     def predict(self, state):
-        return self.actor.forward(state)
+        probs = self.actor.forward(state)
+
+        probabilities = probs.data.reshape(-1)
+
+        return int(
+            euclid.xp.random.choice(
+                len(probabilities),
+                p=probabilities / probabilities.sum(),
+            )
+        )
     def expected_q_value(self, state):
 
         probs = self.actor.forward(state)
         probs = probs.reshape(-1)
 
-        action_dim = probs.data.shape[0]
+        action_dim = probs.data.shape[-1]
 
         total = None
 
@@ -36,16 +44,9 @@ class QActorCritic(QCritic):
         return total
 
     def expected_q_target(self, next_state):
-        """
-        Calculate:
-
-            E[Q(s',a')] = sum_a pi(a'|s') Q(s',a')
-
-        This returns a Python float so the TD target is detached
-        from both the actor and critic computation graphs.
-        """
 
         probs = self.actor.forward(next_state)
+        probs = probs.reshape(-1)
 
         action_dim = probs.data.shape[-1]
 
@@ -79,13 +80,9 @@ class QActorCritic(QCritic):
 
             state = transition.state
             action = transition.action
-            reward = transition.reward
+            reward = float(transition.reward)
             next_state = transition.next_state
             done = transition.done
-
-            # -------------------------------------------------
-            # Critic update
-            # -------------------------------------------------
 
             current_q = self.q_value(
                 state,
@@ -94,7 +91,6 @@ class QActorCritic(QCritic):
 
             if done:
                 target = reward
-
             else:
                 next_value = self.expected_q_target(
                     next_state
@@ -105,19 +101,13 @@ class QActorCritic(QCritic):
                     + self.gamma * next_value
                 )
 
-            td_error = target - current_q
+            td_error = current_q - target
 
             critic_loss = td_error ** 2
 
             self.critic_optimizer.zero_grad()
-
             critic_loss.backward()
-
             self.critic_optimizer.step()
-
-            # -------------------------------------------------
-            # Actor update
-            # -------------------------------------------------
 
             expected_q = self.expected_q_value(
                 state
@@ -126,20 +116,13 @@ class QActorCritic(QCritic):
             actor_loss = -expected_q
 
             self.actor_optimizer.zero_grad()
-
             actor_loss.backward()
-
             self.actor_optimizer.step()
 
-            critic_losses.append(
-                critic_loss
-            )
-
-            actor_losses.append(
-                actor_loss
-            )
+            critic_losses.append(critic_loss)
+            actor_losses.append(actor_loss)
 
         return {
             "critic_loss": critic_losses,
-            "actor_loss": actor_losses
+            "actor_loss": actor_losses,
         }

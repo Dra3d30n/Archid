@@ -1,4 +1,3 @@
-
 from ..actor_critic import ActorCritic
 
 
@@ -10,13 +9,13 @@ class QCritic(ActorCritic):
         critic,
         actor_optimizer,
         critic_optimizer,
-        gamma=0.99
+        gamma=0.99,
     ):
         super().__init__(
             actor=actor,
             critic=critic,
             actor_optimizer=actor_optimizer,
-            critic_optimizer=critic_optimizer
+            critic_optimizer=critic_optimizer,
         )
 
         self.gamma = gamma
@@ -24,7 +23,7 @@ class QCritic(ActorCritic):
     def q_value(self, state, action):
         return self.critic.forward(
             state,
-            action
+            action,
         )
 
     def td_target(
@@ -32,14 +31,14 @@ class QCritic(ActorCritic):
         reward,
         next_state,
         next_action,
-        done
+        done,
     ):
         if done:
             return reward
 
         next_value = self.q_value(
             next_state,
-            next_action
+            next_action,
         )
 
         return reward + self.gamma * float(
@@ -53,18 +52,18 @@ class QCritic(ActorCritic):
         reward,
         next_state,
         next_action,
-        done
+        done,
     ):
         q_value = self.q_value(
             state,
-            action
+            action,
         )
 
         return self.td_target(
             reward,
             next_state,
             next_action,
-            done
+            done,
         ) - q_value
 
     def update(self, experience):
