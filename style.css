@@ -1,0 +1,445 @@
+
+/* =========================================================
+   ARCHID
+   Red / technical documentation style
+   ========================================================= */
+
+:root {
+  /* Archid accent */
+  --red: #b3262d;
+  --red-bright: #d13a42;
+  --red-dark: #861c22;
+  --red-soft: #321416;
+
+  /* Mostly neutral backgrounds */
+  --background: #232323;
+  --background-alt: #3e3e3e;
+  --surface: #373737;
+
+  /* Neutral borders */
+  --border: #242424;
+  --border-light: #353535;
+
+  /* Neutral text */
+  --text: #f1f1f1;
+  --text-secondary: #b7b7b7;
+  --text-muted: #7f7f7f;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--background);
+  color: var(--text);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  line-height: 1.6;
+}
+
+a {
+  color: var(--red-bright);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #ed555d;
+}
+
+
+/* =========================================================
+   MAIN DOCUMENT
+   ========================================================= */
+
+.page {
+  width: min(850px, calc(100% - 50px));
+
+  margin: 0 auto;
+  padding: 65px 0;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-bottom: 25px;
+}
+
+
+/* Archid logo */
+
+#i1e7j {
+  width: 64px !important;
+  height: 64px !important;
+
+  min-width: 64px !important;
+  min-height: 64px !important;
+
+  max-width: 64px !important;
+  max-height: 64px !important;
+
+  object-fit: contain;
+  flex: 0 0 64px;
+}
+
+
+/* Archid title */
+
+#iakzk {
+  margin: 0;
+
+  color: var(--red-bright);
+
+  font-size: 56px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+
+/* Intro paragraph */
+
+.intro-text {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: var(--text-secondary);
+
+  text-align: left;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+  margin-bottom: 65px;
+}
+
+.section > h2,
+.projects > h2 {
+  margin-bottom: 25px;
+
+  color: var(--red-bright);
+
+  text-align: center;
+
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   DOCUMENT TEXT
+   ========================================================= */
+
+.section p,
+.project p {
+  margin: 14px 0;
+
+  color: var(--text-secondary);
+
+  text-align: left;
+
+  line-height: 1.75;
+}
+
+strong {
+  color: var(--text);
+}
+
+
+/* =========================================================
+   FEATURE LIST
+   ========================================================= */
+
+.feature-list {
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 0 auto;
+
+  padding-left: 25px;
+
+  color: var(--text-secondary);
+
+  text-align: left;
+
+  list-style-position: outside;
+}
+
+.feature-list li {
+  margin-bottom: 8px;
+
+  padding-left: 5px;
+
+  color: var(--text-secondary);
+
+  text-align: left;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+.projects {
+  display: flex;
+  flex-direction: column;
+
+  gap: 65px;
+
+  width: 100%;
+}
+
+.projects > h2 {
+  margin-bottom: -15px;
+}
+
+
+/* Individual project */
+
+.project {
+  width: 100%;
+
+  padding-top: 30px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+/* Project title */
+
+.project > h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  color: var(--red-bright);
+
+  text-align: left;
+
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   PROJECT IMAGES
+   ========================================================= */
+
+.project-image {
+  display: block;
+
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 720px !important;
+  max-height: 460px !important;
+
+  margin: 25px auto;
+
+  object-fit: contain;
+
+  border: 1px solid var(--border-light);
+}
+
+
+/* Project-specific larger images */
+
+#ici7jk {
+  max-width: 900px !important;
+  max-height: 700px !important;
+}
+
+#ivqxk9 {
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 1000px !important;
+  max-height: 800px !important;
+
+  margin: 25px auto;
+}
+
+
+/* =========================================================
+   PROJECT TEXT WIDTH
+   ========================================================= */
+
+.project p {
+  max-width: 760px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  margin-top: 70px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--border);
+
+  text-align: center;
+}
+
+.github-link {
+  color: var(--red-bright);
+
+  font-weight: bold;
+}
+
+.github-link:hover {
+  color: #ed555d;
+}
+
+
+/* =========================================================
+   SUBTLE DOCUMENT SECTIONS
+   ========================================================= */
+
+.section:nth-of-type(even) {
+  background: transparent;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .page {
+    width: calc(100% - 40px);
+    padding: 45px 0;
+  }
+
+  #iakzk {
+    font-size: 42px;
+  }
+
+  #i1e7j {
+    width: 38px !important;
+    height: 38px !important;
+
+    min-width: 38px !important;
+    min-height: 38px !important;
+
+    max-width: 38px !important;
+    max-height: 38px !important;
+
+    flex-basis: 38px;
+  }
+
+  .title {
+    gap: 10px;
+  }
+
+  .intro-text {
+    font-size: 16px;
+  }
+
+  .feature-list {
+    width: 100%;
+    padding-left: 25px;
+  }
+
+  .project-image,
+  #ici7jk,
+  #ivqxk9 {
+    max-width: 100% !important;
+    max-height: 350px !important;
+  }
+
+  .project > h2 {
+    font-size: 25px;
+  }
+
+  .section > h2,
+  .projects > h2 {
+    font-size: 27px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .page {
+    width: calc(100% - 30px);
+    padding: 35px 0;
+  }
+
+  #iakzk {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  #i1e7j {
+    width: 32px !important;
+    height: 32px !important;
+
+    min-width: 32px !important;
+    min-height: 32px !important;
+
+    max-width: 32px !important;
+    max-height: 32px !important;
+
+    flex-basis: 32px;
+  }
+
+  .title {
+    gap: 8px;
+  }
+
+  .intro {
+    margin-bottom: 50px;
+  }
+
+  .project-image,
+  #ici7jk,
+  #ivqxk9 {
+    max-height: 280px !important;
+  }
+}

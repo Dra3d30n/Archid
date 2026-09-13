@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: archid
+Version: 0.9.0
+Summary: A higher level deep learning framework built on Euclid
+Author: Dra3don
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: euclid-ml
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary

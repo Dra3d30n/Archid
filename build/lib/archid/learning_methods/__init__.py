@@ -1,0 +1,4 @@
+import archid.learning_methods.evolutionary_learning.__init__ as evolutionary
+import archid.learning_methods.learning as Learning
+import archid.learning_methods.reinforcement_learning.__init__ as reinforcement
+import archid.learning_methods.supervised_learning.__init__ as supervised

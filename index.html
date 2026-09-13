@@ -1,0 +1,307 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Archid</title>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta name="robots" content="index,follow"/>
+
+  <meta name="generator" content="GrapesJS Studio"/>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <style data-project-fonts="true">
+    @font-face {
+      font-family: Mulish;
+      src: url('https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqU3QAsQqB3BA.woff2');
+      font-weight: 200 1000;
+    }
+
+    @font-face {
+      font-family: Mulish;
+      src: url('https://fonts.gstatic.com/s/mulish/v18/1Pttg83HX_SGhgqk2gotYKVnBOif.woff2');
+      font-style: italic;
+      font-weight: 200 1000;
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+  <!-- =====================================================
+       INTRO
+       ===================================================== -->
+
+  <section class="intro">
+
+    <div class="title">
+
+      <img
+        alt="Archid Logo"
+        src="webassets/icon.png"
+        id="i1e7j"
+      />
+
+      <h1 id="iakzk">Archid</h1>
+
+    </div>
+
+
+    <p class="intro-text">
+
+      Archid is a machine learning library focused on building,
+      training, and experimenting with neural networks and
+      reinforcement learning systems. It is designed to provide
+      higher-level tools for machine learning while remaining
+      flexible enough to experiment with different training
+      methods and algorithms.
+
+    </p>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WHAT IT INCLUDES
+       ===================================================== -->
+
+  <section class="section">
+
+    <h2>What it includes</h2>
+
+    <ul class="feature-list">
+
+      <li>Neural network training and inference</li>
+
+      <li>Supervised learning utilities</li>
+
+      <li>Reinforcement learning algorithms</li>
+
+      <li>Actor-critic architectures</li>
+
+      <li>Policy and value-based learning methods</li>
+
+      <li>Experience and transition handling</li>
+
+      <li>Environment interfaces for reinforcement learning</li>
+
+      <li>
+        Built on top of the
+        <a
+          href="https://dra3d30n.github.io/Euclid/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Euclid
+        </a>
+        machine learning framework
+      </li>
+
+    </ul>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WHY ARCHID?
+       ===================================================== -->
+
+  <section class="section">
+
+    <h2>Why Archid?</h2>
+
+    <p>
+      Archid is intended to sit at a higher level than the
+      underlying tensor and automatic differentiation system.
+    </p>
+
+    <p>
+      Instead of focusing primarily on implementing tensors,
+      mathematical operations, and computational graphs,
+      Archid focuses on the systems used to actually train
+      machine learning models.
+    </p>
+
+    <p>
+      The project currently explores both conventional
+      supervised learning and reinforcement learning, with an
+      emphasis on keeping the underlying components modular.
+    </p>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       REINFORCEMENT LEARNING
+       ===================================================== -->
+
+  <section class="section">
+
+    <h2>Reinforcement Learning</h2>
+
+    <p>
+      Archid includes an experimental reinforcement learning
+      framework for implementing and comparing different
+      learning algorithms.
+    </p>
+
+    <p>
+      Environments produce experiences which can be represented
+      as transitions containing states, actions, rewards, and
+      subsequent states. These experiences are then passed to
+      algorithms which determine how the agent should update
+      its behavior.
+    </p>
+
+    <p>
+      The architecture is designed to support different classes
+      of algorithms, including value-based methods and
+      actor-critic methods.
+    </p>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       PROJECTS
+       ===================================================== -->
+
+  <section class="projects">
+
+    <h2>Projects Built with Archid</h2>
+
+
+
+    <!-- ===================================================
+         PROJECT 1
+         =================================================== -->
+
+    <article class="project">
+
+      <h2>Cliff Walking</h2>
+
+      <img
+        src="webassets/cliff_walking.png"
+        alt="Archid reinforcement learning benchmark"
+        class="project-image"
+      />
+
+      <p>
+        Cliff Walking is used as a small reinforcement learning
+        benchmark for testing Archid's algorithms and training
+        infrastructure.
+      </p>
+
+      <p>
+        Multiple algorithms can be trained on the same environment
+        and compared using their episode rewards and learning
+        behavior.
+      </p>
+
+      <p>
+        This provides a simple environment for experimenting with
+        value-based and policy-based reinforcement learning before
+        moving to more complex tasks.
+      </p>
+
+    </article>
+
+
+
+    <!-- ===================================================
+         PROJECT 2
+         =================================================== -->
+
+    <article class="project">
+
+      <h2>Custom Reinforcement Learning Experiments</h2>
+
+      <img
+        src="webassets/rl.png"
+        alt="Archid reinforcement learning experiment"
+        class="project-image"
+      />
+
+      <p>
+        Archid is also used to experiment with custom reinforcement
+        learning algorithms, environments, and training methods.
+      </p>
+
+      <p>
+        The modular design makes it possible to change the learning
+        algorithm without rewriting the environment or experience
+        pipeline.
+      </p>
+
+    </article>
+
+
+
+    <!-- ===================================================
+         PROJECT 3
+         =================================================== -->
+
+    <article class="project">
+
+      <h2>Neural Network Training</h2>
+
+      <img
+        src="webassets/training.png"
+        alt="Archid neural network training"
+        class="project-image"
+      />
+
+      <p>
+        Archid can also be used for conventional neural network
+        training, providing higher-level training functionality
+        on top of the underlying machine learning framework.
+      </p>
+
+      <p>
+        This allows the same underlying neural network components
+        to be used across different training approaches.
+      </p>
+
+    </article>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    <a
+      href="https://github.com/Dra3d30n/Archid"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="github-link"
+    >
+      GitHub
+    </a>
+
+  </footer>
+
+
+</main>
+
+</body>
+
+</html>
+```
